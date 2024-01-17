@@ -9,3 +9,6 @@ publish: #отладка публикации
 
 lint: #запуск линтера
 	npx eslint .
+
+brain-even: #запуск игры "Проверка на четность"
+	node bin/brain-even.js
