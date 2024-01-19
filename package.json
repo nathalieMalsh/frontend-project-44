@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Nataliya Malysheva",
+  "author": "nathalieMalsh",
   "license": "ISC",
   "bin": {
     "brain-games": "bin/brain-games.js",

@@ -22,7 +22,7 @@ export const round = () => {
 };
 
 export const playGame = () => {
-const userName = readlineSync.question('May I have your name? ');
+const userName = readlineSync.question('Welcome to the Brain Games! May I have your name? ');
   console.log('Hello, ' + userName + '!');
   for (let i = 0; i < 3; i++) {
     const isCorrect = round();
