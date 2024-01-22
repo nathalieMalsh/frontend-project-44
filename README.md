@@ -2,12 +2,12 @@
 [![Actions Status](https://github.com/nathalieMalsh/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nathalieMalsh/frontend-project-44/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/99d14e36295810008f35/maintainability)](https://codeclimate.com/github/nathalieMalsh/frontend-project-44/maintainability)
 
-Игра "Проверка на четность"
+**Игра "Проверка на четность"**
 
-Устновка и запуск:
+_Устновка и запуск:_
 https://asciinema.org/a/xXokfphBjxGXwSZb59l1umM2W
 
-Игра "Калькулятор"
+**Игра "Калькулятор"**
 
-Устновка и запуск:
+_Устновка и запуск:_
 https://asciinema.org/a/YO8Vo4oxK2wMUIdvw6bv0fHaj
