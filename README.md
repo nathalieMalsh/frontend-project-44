@@ -11,3 +11,8 @@ https://asciinema.org/a/xXokfphBjxGXwSZb59l1umM2W
 
 _Устновка и запуск:_
 https://asciinema.org/a/YO8Vo4oxK2wMUIdvw6bv0fHaj
+
+**Игра "НОД"**
+
+_Устновка и запуск:_
+https://asciinema.org/a/kZdzOuCoFHEULdfLFUp7KOlLg
