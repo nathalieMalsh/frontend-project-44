@@ -28,5 +28,6 @@ const getRandomExpression = () => {
     return cons(gameTask, correctAnswer);
 };
 
+const ruleOfGame = 'What is the result of the expression?';
 
-export default () => playGame(getRandomExpression, userName);
+export default () => playGame(getRandomExpression, userName, ruleOfGame);

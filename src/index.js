@@ -9,8 +9,8 @@ export const greeting = () => {
 
 export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-export const round = (gameTask) => {
-    const userAnswer = readlineSync.question(`What is the result of the expression? Question: ${gameTask} Your answer: `);
+export const round = (gameTask, ruleOfGame) => {
+    const userAnswer = readlineSync.question(`${ruleOfGame} Question: ${gameTask} Your answer: `);
     return userAnswer;
 };
 
@@ -24,12 +24,12 @@ export const isCorrect = (userAnswer, correctAnswer, userName) => {
       };
 };
 
-export const playGame = (gameTaskAndCorrectAnswer, userName) => {
+export const playGame = (gameTaskAndCorrectAnswer, userName, ruleOfGame) => {
     for (let i = 0; i < 3; i+=1) {
       let randomExpression = gameTaskAndCorrectAnswer();
       let gameTask = car(randomExpression);
       let correctAnswer = cdr(randomExpression);
-      let userAnswer = round(gameTask);
+      let userAnswer = round(gameTask, ruleOfGame);
 
       if (!isCorrect(userAnswer, correctAnswer, userName)) {
         return;

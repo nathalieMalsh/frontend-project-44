@@ -15,3 +15,6 @@ brain-even: #запуск игры "Проверка на четность"
 
 brain-calc: #запуск игры "Калькулятор"
 	node bin/brain-calc.js
+
+brain-gcd: #запуск игры "НОД"
+	node bin/brain-gcd.js
