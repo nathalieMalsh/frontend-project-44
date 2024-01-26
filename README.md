@@ -4,15 +4,20 @@
 
 **Игра "Проверка на четность"**
 
-_Устновка и запуск:_
+_Установка и запуск:_
 https://asciinema.org/a/xXokfphBjxGXwSZb59l1umM2W
 
 **Игра "Калькулятор"**
 
-_Устновка и запуск:_
+_Установка и запуск:_
 https://asciinema.org/a/YO8Vo4oxK2wMUIdvw6bv0fHaj
 
 **Игра "НОД"**
 
-_Устновка и запуск:_
+_Установка и запуск:_
 https://asciinema.org/a/kZdzOuCoFHEULdfLFUp7KOlLg
+
+**Игра "Арифметическая прогрессия"**
+
+_Установка и запуск:_
+https://asciinema.org/a/un5kD70SXuC14h092qHAc8mkK
