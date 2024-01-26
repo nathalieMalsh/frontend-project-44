@@ -18,3 +18,6 @@ brain-calc: #запуск игры "Калькулятор"
 
 brain-gcd: #запуск игры "НОД"
 	node bin/brain-gcd.js
+
+brain-progression: #запуск игры "Арифметическая прогрессия"
+	node bin/brain-progression.js
