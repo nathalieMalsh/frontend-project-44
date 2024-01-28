@@ -15,7 +15,7 @@ const findGCD = (firstNum, secondNum) => {
 const getRandomNumberPair = () => {
   const firstNum = getRandomNumber(1, 100);
   const secondNum = getRandomNumber(1, 100);
-  const gameTask = `${firstNum} ${secondNum}`;
+  const gameTask = ` ${firstNum} ${secondNum}`;
   const correctAnswer = `${findGCD(firstNum, secondNum)}`;
   return cons(gameTask, correctAnswer);
 };

@@ -7,7 +7,7 @@ const isPrime = (number) => {
   if (number < 2) {
     return false;
   }
-  
+
   for (let divisor = 2; divisor < number; divisor += 1) {
     if (number % divisor === 0) {
       return false;
@@ -18,7 +18,7 @@ const isPrime = (number) => {
 
 const getRandomNumForTask = () => {
   const randomNumber = getRandomNumber(1, 100);
-  const gameTask = `${randomNumber}`;
+  const gameTask = ` ${randomNumber}`;
   const correctAnswer = (isPrime(randomNumber)) ? 'yes' : 'no';
   return cons(gameTask, correctAnswer);
 };

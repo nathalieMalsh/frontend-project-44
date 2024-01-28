@@ -11,17 +11,17 @@ const getRandomExpression = () => {
     let gameTask;
 
     if (randomOperator === 0) {
-        gameTask = `${firstNumber} + ${secondNumber}`;
+        gameTask = ` ${firstNumber} + ${secondNumber}`;
         correctAnswer = `${firstNumber + secondNumber}`;
     }
 
     if (randomOperator === 1) {
-        gameTask = `${firstNumber} - ${secondNumber}`;
+        gameTask = ` ${firstNumber} - ${secondNumber}`;
         correctAnswer = `${firstNumber - secondNumber}`;
     }
 
     if (randomOperator === 2) {
-        gameTask = `${firstNumber} * ${secondNumber}`;
+        gameTask = ` ${firstNumber} * ${secondNumber}`;
         correctAnswer = `${firstNumber * secondNumber}`;
     }
 
