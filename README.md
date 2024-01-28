@@ -12,28 +12,28 @@ This is a training project provided by Hexlet. The project is a series of logic 
 
 _If the number is even, you should answer "yes", if the number is odd, you should answer "no"._
 
-https://asciinema.org/a/xXokfphBjxGXwSZb59l1umM2W
+[![asciicast](https://asciinema.org/a/xXokfphBjxGXwSZb59l1umM2W)
 
 ### Brain-calc
 
 _You should write the result of a mathematical expression._
 
-https://asciinema.org/a/YO8Vo4oxK2wMUIdvw6bv0fHaj
+[![asciicast](https://asciinema.org/a/YO8Vo4oxK2wMUIdvw6bv0fHaj)
 
 ### Brain-gcd
 
 _You should write the greatest common divisor._
 
-https://asciinema.org/a/kZdzOuCoFHEULdfLFUp7KOlLg
+[![asciicast](https://asciinema.org/a/kZdzOuCoFHEULdfLFUp7KOlLg)
 
 ### Brain-progression
 
 _You should write the missing number in arithmetic progression._
 
-https://asciinema.org/a/un5kD70SXuC14h092qHAc8mkK
+[![asciicast](https://asciinema.org/a/un5kD70SXuC14h092qHAc8mkK)
 
 ### Brain-prime
 
 _If the number is prime, you should answer "yes", if it's not, you should answer "no"._
 
-https://asciinema.org/a/znGQuKjSo6GvOZ2Dw2QuY0Mlt
+[![asciicast](https://asciinema.org/a/znGQuKjSo6GvOZ2Dw2QuY0Mlt)
