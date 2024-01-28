@@ -8,7 +8,7 @@ const getRandomProgression = () => {
   const step = getRandomNumber(1, 10);
   let nextNum = start;
   const miss = getRandomNumber(1, 10);
-  let gameTask = ``;
+  let gameTask = '';
   for (let n = 1; n <= 10; n += 1) {
     if (n === miss) {
       gameTask = `${gameTask} ..`;

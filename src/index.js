@@ -10,7 +10,7 @@ export const greeting = () => {
 export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export const round = (gameTask, ruleOfGame) => {
-    const userAnswer = readlineSync.question(`${ruleOfGame} Question:${gameTask}\nYour answer:`);
+    const userAnswer = readlineSync.question(`${ruleOfGame} Question: ${gameTask}\nYour answer:`);
     return userAnswer;
 };
 
