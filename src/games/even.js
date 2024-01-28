@@ -1,3 +1,7 @@
+import { greeting } from '../index.js';
+
+let userName = greeting();
+
 import readlineSync from 'readline-sync';
 
 export const isEven = number => (number % 2 === 0);
@@ -16,14 +20,12 @@ export const round = () => {
     console.log('Correct!');
     return true;
   } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. `);
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}! `);
     return false;
   };
 };
 
 export const playGame = () => {
-const userName = readlineSync.question('Welcome to the Brain Games! May I have your name? ');
-  console.log('Hello, ' + userName + '!');
   for (let i = 0; i < 3; i++) {
     const isCorrect = round();
     if (!isCorrect) {
