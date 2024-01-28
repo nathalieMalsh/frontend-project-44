@@ -21,3 +21,8 @@ https://asciinema.org/a/kZdzOuCoFHEULdfLFUp7KOlLg
 
 _Установка и запуск:_
 https://asciinema.org/a/un5kD70SXuC14h092qHAc8mkK
+
+**Игра "Простое ли число?"**
+
+_Установка и запуск:_
+https://asciinema.org/a/znGQuKjSo6GvOZ2Dw2QuY0Mlt
