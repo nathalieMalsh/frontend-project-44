@@ -1,13 +1,12 @@
+import readlineSync from 'readline-sync';
 import { greeting } from '../index.js';
 
-let userName = greeting();
+const userName = greeting();
 
-import readlineSync from 'readline-sync';
-
-export const isEven = number => (number % 2 === 0);
+export const isEven = (number) => (number % 2 === 0);
 
 export const getNumber = () => {
-  const randomNumber = Math.floor(Math.random()*101);
+  const randomNumber = Math.floor(Math.random() * 101);
   return randomNumber;
 };
 
@@ -19,19 +18,17 @@ export const round = () => {
   if (correctAnswer === userAnswer) {
     console.log('Correct!');
     return true;
-  } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}! `);
-    return false;
-  };
+  }
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}! `);
+  return false;
 };
 
 export const playGame = () => {
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const isCorrect = round();
     if (!isCorrect) {
       return;
-    };
-  };
+    }
+  }
   console.log(`Congratulations, ${userName}!`);
 };
-

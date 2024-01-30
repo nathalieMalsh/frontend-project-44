@@ -1,7 +1,7 @@
-import { getRandomNumber, greeting, round, isCorrect, playGame } from '../index.js';
-import {cons, car, cdr, toString, isPair} from '@hexlet/pairs';
+import { cons } from '@hexlet/pairs';
+import { getRandomNumber, greeting, playGame } from '../index.js';
 
-let userName = greeting();
+const userName = greeting();
 
 const findGCD = (firstNum, secondNum) => {
   const min = Math.min(firstNum, secondNum);
