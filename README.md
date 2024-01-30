@@ -6,7 +6,7 @@
 
 This is a training project provided by Hexlet. The project is a series of logic games written in JavaScript.The games are divided into separate modules: brain-even, brain-calc, brain-gcd, brain-progression and brain-prime. You should give three correct answers to win the game.
 
-## Installation
+## Installation and games
 
 ### Brain-even
 
