@@ -25,10 +25,10 @@ export const isCorrect = (userAnswer, correctAnswer, userName) => {
 
 export const playGame = (gameTaskAndCorrectAnswer, userName, ruleOfGame) => {
   for (let i = 0; i < 3; i += 1) {
-    let randomExpression = gameTaskAndCorrectAnswer();
-    let gameTask = car(randomExpression);
-    let correctAnswer = cdr(randomExpression);
-    let userAnswer = round(gameTask, ruleOfGame);
+    const randomExpression = gameTaskAndCorrectAnswer();
+    const gameTask = car(randomExpression);
+    const correctAnswer = cdr(randomExpression);
+    const userAnswer = round(gameTask, ruleOfGame);
 
     if (!isCorrect(userAnswer, correctAnswer, userName)) {
       return;

@@ -12,8 +12,8 @@ const getRandomProgression = () => {
     if (n === miss) {
       gameTask = `${gameTask} ..`;
     } else {
-    gameTask = `${gameTask} ${start + step * n}`;
-      }
+      gameTask = `${gameTask} ${start + step * n}`;
+    }
   }
   const correctAnswer = `${start + step * miss}`;
   return cons(gameTask, correctAnswer);
