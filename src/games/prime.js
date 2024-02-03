@@ -13,16 +13,16 @@ const isPrime = (number) => {
   return true;
 };
 
-let taskAnswerRule = {};
+const taskAnswerRule = {};
 
 const getTaskAndCorrectAnswer = () => {
   const randomNumber = getRandomNumber(1, 100);
   const gameTask = ` ${randomNumber}`;
   const correctAnswer = (isPrime(randomNumber)) ? 'yes' : 'no';
 
-  taskAnswerRule['gameTask'] = gameTask;
-  taskAnswerRule['correctAnswer'] = correctAnswer;
-  taskAnswerRule['ruleOfGame'] = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  taskAnswerRule.gameTask = gameTask;
+  taskAnswerRule.correctAnswer = correctAnswer;
+  taskAnswerRule.ruleOfGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   return taskAnswerRule;
 };

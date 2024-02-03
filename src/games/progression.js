@@ -6,13 +6,13 @@ const progression = (firstNumber, step, miss, progressionLength) => {
     if (n === miss) {
       gameTask = `${gameTask} ..`;
     } else {
-        gameTask = `${gameTask} ${firstNumber + step * n}`;
+      gameTask = `${gameTask} ${firstNumber + step * n}`;
     }
   }
   return gameTask;
 };
 
-let taskAnswerRule = {};
+const taskAnswerRule = {};
 
 const getTaskAndCorrectAnswer = () => {
   const firstNumber = getRandomNumber(1, 100);
@@ -24,9 +24,9 @@ const getTaskAndCorrectAnswer = () => {
 
   const correctAnswer = `${firstNumber + step * miss}`;
 
-  taskAnswerRule['gameTask'] = gameTask;
-  taskAnswerRule['correctAnswer'] = correctAnswer;
-  taskAnswerRule['ruleOfGame'] = 'What number is missing in the progression?';
+  taskAnswerRule.gameTask = gameTask;
+  taskAnswerRule.correctAnswer = correctAnswer;
+  taskAnswerRule.ruleOfGame = 'What number is missing in the progression?';
 
   return taskAnswerRule;
 };

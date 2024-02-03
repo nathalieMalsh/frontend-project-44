@@ -1,7 +1,7 @@
 import { getRandomNumber, playGame } from '../index.js';
 
 const getRandomExpression = (randomOperator, firstNumber, secondNumber) => {
-  let result = {};
+  const result = {};
   let gameTask;
   let correctAnswer;
 
@@ -20,12 +20,12 @@ const getRandomExpression = (randomOperator, firstNumber, secondNumber) => {
     correctAnswer = `${firstNumber * secondNumber}`;
   }
 
-  result['gameTask'] = gameTask;
-  result['correctAnswer'] = correctAnswer;
+  result.gameTask = gameTask;
+  result.correctAnswer = correctAnswer;
   return result;
 };
 
-let taskAnswerRule = {};
+const taskAnswerRule = {};
 
 const getTaskAndCorrectAnswer = () => {
   const randomOperator = getRandomNumber(0, 2);
@@ -34,9 +34,9 @@ const getTaskAndCorrectAnswer = () => {
 
   const randomExpression = getRandomExpression(randomOperator, firstNumber, secondNumber);
 
-  taskAnswerRule['gameTask'] = randomExpression['gameTask'];
-  taskAnswerRule['correctAnswer'] = randomExpression['correctAnswer'];
-  taskAnswerRule['ruleOfGame'] = 'What is the result of the expression?';
+  taskAnswerRule.gameTask = randomExpression.gameTask;
+  taskAnswerRule.correctAnswer = randomExpression.correctAnswer;
+  taskAnswerRule.ruleOfGame = 'What is the result of the expression?';
 
   return taskAnswerRule;
 };

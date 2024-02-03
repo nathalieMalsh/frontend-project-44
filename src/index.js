@@ -13,7 +13,7 @@ export const round = (gameTask, ruleOfGame) => {
   return userAnswer;
 };
 
-export const isCorrect = (userAnswer, correctAnswer, userName) => {
+export const isCorrect = (userAnswer, correctAnswer) => {
   if (correctAnswer === userAnswer) {
     return true;
   }
@@ -27,17 +27,14 @@ export const playGame = (getTaskAndCorrectAnswer) => {
   console.log(`Hello, ${userName}!`);
   for (let i = 0; i < roundCount; i += 1) {
     const gameSet = getTaskAndCorrectAnswer();
-    const gameTask = gameSet.gameTask;
-    const correctAnswer = gameSet.correctAnswer;
-    const ruleOfGame = gameSet.ruleOfGame;
+    const { gameTask, correctAnswer, ruleOfGame } = gameSet;
     const userAnswer = round(gameTask, ruleOfGame);
 
-    if (!isCorrect(userAnswer, correctAnswer, userName)) {
+    if (!isCorrect(userAnswer, correctAnswer)) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
       return;
-    } else {
-        console.log(`Correct!`);
     }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
 };

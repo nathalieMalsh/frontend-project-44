@@ -9,7 +9,7 @@ const findGCD = (firstNum, secondNum) => {
   return findGCD(min, max % min);
 };
 
-let taskAnswerRule = {};
+const taskAnswerRule = {};
 
 const getTaskAndCorrectAnswer = () => {
   const firstNum = getRandomNumber(1, 100);
@@ -17,9 +17,9 @@ const getTaskAndCorrectAnswer = () => {
   const gameTask = ` ${firstNum} ${secondNum}`;
   const correctAnswer = `${findGCD(firstNum, secondNum)}`;
 
-  taskAnswerRule['gameTask'] = gameTask;
-  taskAnswerRule['correctAnswer'] = correctAnswer;
-  taskAnswerRule['ruleOfGame'] = 'Find the greatest common divisor of given numbers.';
+  taskAnswerRule.gameTask = gameTask;
+  taskAnswerRule.correctAnswer = correctAnswer;
+  taskAnswerRule.ruleOfGame = 'Find the greatest common divisor of given numbers.';
 
   return taskAnswerRule;
 };
