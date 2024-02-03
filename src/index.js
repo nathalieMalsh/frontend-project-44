@@ -23,7 +23,8 @@ export const isCorrect = (userAnswer, correctAnswer, userName) => {
 const roundCount = 3;
 
 export const playGame = (getTaskAndCorrectAnswer) => {
-  const userName = greeting();
+  const userName = readlineSync.question('Welcome to the Brain Games! May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   for (let i = 0; i < roundCount; i += 1) {
     const gameSet = getTaskAndCorrectAnswer();
     const gameTask = gameSet.gameTask;
