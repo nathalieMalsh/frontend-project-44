@@ -6,7 +6,7 @@ let taskAnswerRule = {};
 
 const getTaskAndCorrectAnswer = () => {
   const randomNumber = getRandomNumber(1, 100);
-  const gameTask = `${randomNumber}`;
+  const gameTask = ` ${randomNumber}`;
   const correctAnswer = (isEven(randomNumber)) ? 'yes' : 'no';
 
   taskAnswerRule['gameTask'] = gameTask;
