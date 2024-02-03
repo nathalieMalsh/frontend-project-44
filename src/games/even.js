@@ -11,7 +11,7 @@ const getTaskAndCorrectAnswer = () => {
 
   taskAnswerRule['gameTask'] = gameTask;
   taskAnswerRule['correctAnswer'] = correctAnswer;
-  taskAnswerRule['ruleOfGame'] = 'Answer "yes" if number even, otherwise answer "no".';
+  taskAnswerRule['ruleOfGame'] = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   return taskAnswerRule;
 };
