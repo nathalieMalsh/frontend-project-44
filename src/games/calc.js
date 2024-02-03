@@ -1,14 +1,9 @@
-import { cons } from '@hexlet/pairs';
-import { getRandomNumber, greeting, playGame } from '../index.js';
+import { getRandomNumber, playGame } from '../index.js';
 
-const userName = greeting();
-
-const getRandomExpression = () => {
-  const randomOperator = getRandomNumber(0, 2);
-  const firstNumber = getRandomNumber(1, 100);
-  const secondNumber = getRandomNumber(1, 100);
-  let correctAnswer;
+const getRandomExpression = (randomOperator, firstNumber, secondNumber) => {
+  let result = {};
   let gameTask;
+  let correctAnswer;
 
   if (randomOperator === 0) {
     gameTask = ` ${firstNumber} + ${secondNumber}`;
@@ -25,9 +20,25 @@ const getRandomExpression = () => {
     correctAnswer = `${firstNumber * secondNumber}`;
   }
 
-  return cons(gameTask, correctAnswer);
+  result['gameTask'] = gameTask;
+  result['correctAnswer'] = correctAnswer;
+  return result;
 };
 
-const ruleOfGame = 'What is the result of the expression?';
+let taskAnswerRule = {};
 
-export default () => playGame(getRandomExpression, userName, ruleOfGame);
+const getTaskAndCorrectAnswer = () => {
+  const randomOperator = getRandomNumber(0, 2);
+  const firstNumber = getRandomNumber(1, 100);
+  const secondNumber = getRandomNumber(1, 100);
+
+  const randomExpression = getRandomExpression(randomOperator, firstNumber, secondNumber);
+
+  taskAnswerRule['gameTask'] = randomExpression['gameTask'];
+  taskAnswerRule['correctAnswer'] = randomExpression['correctAnswer'];
+  taskAnswerRule['ruleOfGame'] = 'What is the result of the expression?';
+
+  return taskAnswerRule;
+};
+
+export default () => playGame(getTaskAndCorrectAnswer);

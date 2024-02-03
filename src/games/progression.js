@@ -1,24 +1,34 @@
-import { cons } from '@hexlet/pairs';
-import { getRandomNumber, greeting, playGame } from '../index.js';
+import { getRandomNumber, playGame } from '../index.js';
 
-const userName = greeting();
-
-const getRandomProgression = () => {
-  const start = getRandomNumber(1, 100);
-  const step = getRandomNumber(1, 10);
-  const miss = getRandomNumber(1, 10);
+const progression = (firstNumber, step, miss, progressionLength) => {
   let gameTask = '';
-  for (let n = 1; n <= 10; n += 1) {
+  for (let n = 1; n <= progressionLength; n += 1) {
     if (n === miss) {
       gameTask = `${gameTask} ..`;
     } else {
-      gameTask = `${gameTask} ${start + step * n}`;
+        gameTask = `${gameTask} ${firstNumber + step * n}`;
     }
   }
-  const correctAnswer = `${start + step * miss}`;
-  return cons(gameTask, correctAnswer);
+  return gameTask;
 };
 
-const ruleOfGame = 'What number is missing in the progression?';
+let taskAnswerRule = {};
 
-export default () => playGame(getRandomProgression, userName, ruleOfGame);
+const getTaskAndCorrectAnswer = () => {
+  const firstNumber = getRandomNumber(1, 100);
+  const progressionLength = 10;
+  const step = getRandomNumber(1, 10);
+  const miss = getRandomNumber(1, 10);
+
+  const gameTask = progression(firstNumber, step, miss, progressionLength);
+
+  const correctAnswer = `${firstNumber + step * miss}`;
+
+  taskAnswerRule['gameTask'] = gameTask;
+  taskAnswerRule['correctAnswer'] = correctAnswer;
+  taskAnswerRule['ruleOfGame'] = 'What number is missing in the progression?';
+
+  return taskAnswerRule;
+};
+
+export default () => playGame(getTaskAndCorrectAnswer);

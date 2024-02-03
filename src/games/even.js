@@ -1,34 +1,19 @@
-import readlineSync from 'readline-sync';
-import { greeting } from '../index.js';
+import { getRandomNumber, playGame } from '../index.js';
 
-const userName = greeting();
+const isEven = (number) => (number % 2 === 0);
 
-export const isEven = (number) => (number % 2 === 0);
+let taskAnswerRule = {};
 
-export const getNumber = () => {
-  const randomNumber = Math.floor(Math.random() * 101);
-  return randomNumber;
+const getTaskAndCorrectAnswer = () => {
+  const randomNumber = getRandomNumber(1, 100);
+  const gameTask = `${randomNumber}`;
+  const correctAnswer = (isEven(randomNumber)) ? 'yes' : 'no';
+
+  taskAnswerRule['gameTask'] = gameTask;
+  taskAnswerRule['correctAnswer'] = correctAnswer;
+  taskAnswerRule['ruleOfGame'] = 'Answer "yes" if number even, otherwise answer "no".';
+
+  return taskAnswerRule;
 };
 
-export const round = () => {
-  const numberForGame = getNumber();
-  const correctAnswer = (isEven(numberForGame)) ? 'yes' : 'no';
-  const userAnswer = readlineSync.question(`Answer "yes" if the number is even, otherwise answer "no". Question: ${numberForGame} Your answer: `);
-
-  if (correctAnswer === userAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}! `);
-  return false;
-};
-
-export const playGame = () => {
-  for (let i = 0; i < 3; i += 1) {
-    const isCorrect = round();
-    if (!isCorrect) {
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
-};
+export default () => playGame(getTaskAndCorrectAnswer);

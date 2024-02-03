@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import { car, cdr } from '@hexlet/pairs';
 
 export const greeting = () => {
   const userName = readlineSync.question('Welcome to the Brain Games! May I have your name? ');
@@ -16,22 +15,27 @@ export const round = (gameTask, ruleOfGame) => {
 
 export const isCorrect = (userAnswer, correctAnswer, userName) => {
   if (correctAnswer === userAnswer) {
-    console.log('Correct!');
     return true;
   }
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
   return false;
 };
 
-export const playGame = (gameTaskAndCorrectAnswer, userName, ruleOfGame) => {
-  for (let i = 0; i < 3; i += 1) {
-    const randomExpression = gameTaskAndCorrectAnswer();
-    const gameTask = car(randomExpression);
-    const correctAnswer = cdr(randomExpression);
+const roundCount = 3;
+
+export const playGame = (getTaskAndCorrectAnswer) => {
+  const userName = greeting();
+  for (let i = 0; i < roundCount; i += 1) {
+    const gameSet = getTaskAndCorrectAnswer();
+    const gameTask = gameSet.gameTask;
+    const correctAnswer = gameSet.correctAnswer;
+    const ruleOfGame = gameSet.ruleOfGame;
     const userAnswer = round(gameTask, ruleOfGame);
 
     if (!isCorrect(userAnswer, correctAnswer, userName)) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
       return;
+    } else {
+        console.log(`Correct!`);
     }
   }
   console.log(`Congratulations, ${userName}!`);

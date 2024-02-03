@@ -1,7 +1,4 @@
-import { cons } from '@hexlet/pairs';
-import { getRandomNumber, greeting, playGame } from '../index.js';
-
-const userName = greeting();
+import { getRandomNumber, playGame } from '../index.js';
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -16,13 +13,18 @@ const isPrime = (number) => {
   return true;
 };
 
-const getRandomNumForTask = () => {
+let taskAnswerRule = {};
+
+const getTaskAndCorrectAnswer = () => {
   const randomNumber = getRandomNumber(1, 100);
   const gameTask = ` ${randomNumber}`;
   const correctAnswer = (isPrime(randomNumber)) ? 'yes' : 'no';
-  return cons(gameTask, correctAnswer);
+
+  taskAnswerRule['gameTask'] = gameTask;
+  taskAnswerRule['correctAnswer'] = correctAnswer;
+  taskAnswerRule['ruleOfGame'] = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+  return taskAnswerRule;
 };
 
-const ruleOfGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
-export default () => playGame(getRandomNumForTask, userName, ruleOfGame);
+export default () => playGame(getTaskAndCorrectAnswer);

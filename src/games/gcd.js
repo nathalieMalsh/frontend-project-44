@@ -1,7 +1,4 @@
-import { cons } from '@hexlet/pairs';
-import { getRandomNumber, greeting, playGame } from '../index.js';
-
-const userName = greeting();
+import { getRandomNumber, playGame } from '../index.js';
 
 const findGCD = (firstNum, secondNum) => {
   const min = Math.min(firstNum, secondNum);
@@ -12,14 +9,19 @@ const findGCD = (firstNum, secondNum) => {
   return findGCD(min, max % min);
 };
 
-const getRandomNumberPair = () => {
+let taskAnswerRule = {};
+
+const getTaskAndCorrectAnswer = () => {
   const firstNum = getRandomNumber(1, 100);
   const secondNum = getRandomNumber(1, 100);
   const gameTask = ` ${firstNum} ${secondNum}`;
   const correctAnswer = `${findGCD(firstNum, secondNum)}`;
-  return cons(gameTask, correctAnswer);
+
+  taskAnswerRule['gameTask'] = gameTask;
+  taskAnswerRule['correctAnswer'] = correctAnswer;
+  taskAnswerRule['ruleOfGame'] = 'Find the greatest common divisor of given numbers.';
+
+  return taskAnswerRule;
 };
 
-const ruleOfGame = 'Find the greatest common divisor of given numbers.';
-
-export default () => playGame(getRandomNumberPair, userName, ruleOfGame);
+export default () => playGame(getTaskAndCorrectAnswer);
