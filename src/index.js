@@ -8,8 +8,8 @@ export const greeting = () => {
 
 export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-export const round = (gameTask, ruleOfGame) => {
-  const userAnswer = readlineSync.question(`${ruleOfGame} Question:${gameTask}\nYour answer:`);
+export const round = (question, ruleOfGame) => {
+  const userAnswer = readlineSync.question(`${ruleOfGame} Question:${question}\nYour answer:`);
   return userAnswer;
 };
 
@@ -22,13 +22,13 @@ export const isCorrect = (userAnswer, correctAnswer) => {
 
 const roundCount = 3;
 
-export const playGame = (getTaskAndCorrectAnswer) => {
+export const playGame = (ruleOfGame, getQuestionAndCorrectAnswer) => {
   const userName = readlineSync.question('Welcome to the Brain Games! May I have your name? ');
   console.log(`Hello, ${userName}!`);
   for (let i = 0; i < roundCount; i += 1) {
-    const gameSet = getTaskAndCorrectAnswer();
-    const { gameTask, correctAnswer, ruleOfGame } = gameSet;
-    const userAnswer = round(gameTask, ruleOfGame);
+    const gameSet = getQuestionAndCorrectAnswer();
+    const { question, correctAnswer } = gameSet;
+    const userAnswer = round(question, ruleOfGame);
 
     if (!isCorrect(userAnswer, correctAnswer)) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);

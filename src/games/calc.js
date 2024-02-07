@@ -1,44 +1,37 @@
 import { getRandomNumber, playGame } from '../index.js';
 
-const getRandomExpression = (randomOperator, firstNumber, secondNumber) => {
-  const result = {};
-  let gameTask;
-  let correctAnswer;
+const operators = ['+', '-', '*'];
 
-  if (randomOperator === 0) {
-    gameTask = ` ${firstNumber} + ${secondNumber}`;
-    correctAnswer = `${firstNumber + secondNumber}`;
+const getRandomExpression = (firstNumber, secondNumber, randomOperator) => {
+  switch(randomOperator) {
+    case '+':
+      return `${firstNumber + secondNumber}`;
+    case '-':
+      return `${firstNumber - secondNumber}`;
+    case '*':
+      return `${firstNumber * secondNumber}`;
+    default:
+      return null;
   }
-
-  if (randomOperator === 1) {
-    gameTask = ` ${firstNumber} - ${secondNumber}`;
-    correctAnswer = `${firstNumber - secondNumber}`;
-  }
-
-  if (randomOperator === 2) {
-    gameTask = ` ${firstNumber} * ${secondNumber}`;
-    correctAnswer = `${firstNumber * secondNumber}`;
-  }
-
-  result.gameTask = gameTask;
-  result.correctAnswer = correctAnswer;
-  return result;
 };
 
-const taskAnswerRule = {};
+const getRandomOperator = (operators) => {
+  const randomOperator = getRandomNumber(0, operators.length - 1);
+  return operators[randomOperator];
+};
 
-const getTaskAndCorrectAnswer = () => {
-  const randomOperator = getRandomNumber(0, 2);
+const getQuestionAndCorrectAnswer = () => {
   const firstNumber = getRandomNumber(1, 100);
   const secondNumber = getRandomNumber(1, 100);
+  const randomOperator = getRandomOperator(operators);
 
-  const randomExpression = getRandomExpression(randomOperator, firstNumber, secondNumber);
+  const correctAnswer = getRandomExpression(firstNumber, secondNumber, randomOperator);
 
-  taskAnswerRule.gameTask = randomExpression.gameTask;
-  taskAnswerRule.correctAnswer = randomExpression.correctAnswer;
-  taskAnswerRule.ruleOfGame = 'What is the result of the expression?';
+  const question = ` ${firstNumber} ${randomOperator} ${secondNumber}`;
 
-  return taskAnswerRule;
+  return { question, correctAnswer };
 };
 
-export default () => playGame(getTaskAndCorrectAnswer);
+const ruleOfGame = 'What is the result of the expression?';
+
+export default () => playGame(ruleOfGame, getQuestionAndCorrectAnswer);
