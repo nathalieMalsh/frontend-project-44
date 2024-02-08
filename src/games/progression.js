@@ -3,7 +3,7 @@ import { getRandomNumber, playGame } from '../index.js';
 const getProgression = (firstNumber, step, progressionLength) => {
   const progression = [];
   for (let n = 1; n <= progressionLength; n += 1) {
-  progression.push(`${firstNumber + step * n}`);
+    progression.push(`${firstNumber + step * n}`);
   }
   return progression;
 };

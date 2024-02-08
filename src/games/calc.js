@@ -3,7 +3,7 @@ import { getRandomNumber, playGame } from '../index.js';
 const operators = ['+', '-', '*'];
 
 const calculate = (firstNumber, secondNumber, randomOperator) => {
-  switch(randomOperator) {
+  switch (randomOperator) {
     case '+':
       return `${firstNumber + secondNumber}`;
     case '-':
@@ -15,9 +15,9 @@ const calculate = (firstNumber, secondNumber, randomOperator) => {
   }
 };
 
-const getRandomOperator = (operators) => {
-  const randomOperator = getRandomNumber(0, operators.length - 1);
-  return operators[randomOperator];
+const getRandomOperator = (collOfOperators) => {
+  const randomOperator = getRandomNumber(0, collOfOperators.length - 1);
+  return collOfOperators[randomOperator];
 };
 
 const getQuestionAndCorrectAnswer = () => {
