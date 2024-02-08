@@ -9,7 +9,7 @@ const getProgression = (firstNumber, step, progressionLength) => {
 };
 
 const getProgressionWithMiss = (progression, miss) => {
-  progression[miss] = '..';
+  progression.splice(miss, 1, '..');
   return progression;
 };
 
