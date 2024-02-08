@@ -1,34 +1,33 @@
 import { getRandomNumber, playGame } from '../index.js';
 
-const progression = (firstNumber, step, miss, progressionLength) => {
-  let gameTask = '';
+const getProgression = (firstNumber, step, progressionLength) => {
+  const progression = [];
   for (let n = 1; n <= progressionLength; n += 1) {
-    if (n === miss) {
-      gameTask = `${gameTask} ..`;
-    } else {
-      gameTask = `${gameTask} ${firstNumber + step * n}`;
-    }
+  progression.push(`${firstNumber + step * n}`);
   }
-  return gameTask;
+  return progression;
 };
 
-const taskAnswerRule = {};
+const getProgressionWithMiss = (progression, miss) => {
+  progression[miss] = '..';
+  return progression;
+};
 
-const getTaskAndCorrectAnswer = () => {
+const getQuestionAndCorrectAnswer = () => {
   const firstNumber = getRandomNumber(1, 100);
-  const progressionLength = 10;
   const step = getRandomNumber(1, 10);
-  const miss = getRandomNumber(1, 10);
+  const progressionLength = 10;
 
-  const gameTask = progression(firstNumber, step, miss, progressionLength);
+  const progression = getProgression(firstNumber, step, progressionLength);
 
-  const correctAnswer = `${firstNumber + step * miss}`;
+  const miss = getRandomNumber(0, 9);
+  const correctAnswer = progression[miss];
+  const progressionWithMiss = getProgressionWithMiss(progression, miss);
+  const question = progressionWithMiss.join(' ');
 
-  taskAnswerRule.gameTask = gameTask;
-  taskAnswerRule.correctAnswer = correctAnswer;
-  taskAnswerRule.ruleOfGame = 'What number is missing in the progression?';
-
-  return taskAnswerRule;
+  return { question, correctAnswer };
 };
 
-export default () => playGame(getTaskAndCorrectAnswer);
+const gameDescription = 'What number is missing in the progression?';
+
+export default () => playGame(gameDescription, getQuestionAndCorrectAnswer);

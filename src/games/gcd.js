@@ -9,19 +9,15 @@ const findGCD = (firstNum, secondNum) => {
   return findGCD(min, max % min);
 };
 
-const taskAnswerRule = {};
-
-const getTaskAndCorrectAnswer = () => {
+const getQuestionAndCorrectAnswer = () => {
   const firstNum = getRandomNumber(1, 100);
   const secondNum = getRandomNumber(1, 100);
-  const gameTask = ` ${firstNum} ${secondNum}`;
+  const question = `${firstNum} ${secondNum}`;
   const correctAnswer = `${findGCD(firstNum, secondNum)}`;
 
-  taskAnswerRule.gameTask = gameTask;
-  taskAnswerRule.correctAnswer = correctAnswer;
-  taskAnswerRule.ruleOfGame = 'Find the greatest common divisor of given numbers.';
-
-  return taskAnswerRule;
+  return { question, correctAnswer };
 };
 
-export default () => playGame(getTaskAndCorrectAnswer);
+const gameDescription = 'Find the greatest common divisor of given numbers.';
+
+export default () => playGame(gameDescription, getQuestionAndCorrectAnswer);

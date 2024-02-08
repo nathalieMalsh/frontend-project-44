@@ -2,7 +2,7 @@ import { getRandomNumber, playGame } from '../index.js';
 
 const operators = ['+', '-', '*'];
 
-const getRandomExpression = (firstNumber, secondNumber, randomOperator) => {
+const calculate = (firstNumber, secondNumber, randomOperator) => {
   switch(randomOperator) {
     case '+':
       return `${firstNumber + secondNumber}`;
@@ -11,7 +11,7 @@ const getRandomExpression = (firstNumber, secondNumber, randomOperator) => {
     case '*':
       return `${firstNumber * secondNumber}`;
     default:
-      return null;
+      throw new Error('Unknown state!');
   }
 };
 
@@ -25,13 +25,13 @@ const getQuestionAndCorrectAnswer = () => {
   const secondNumber = getRandomNumber(1, 100);
   const randomOperator = getRandomOperator(operators);
 
-  const correctAnswer = getRandomExpression(firstNumber, secondNumber, randomOperator);
+  const correctAnswer = calculate(firstNumber, secondNumber, randomOperator);
 
-  const question = ` ${firstNumber} ${randomOperator} ${secondNumber}`;
+  const question = `${firstNumber} ${randomOperator} ${secondNumber}`;
 
   return { question, correctAnswer };
 };
 
-const ruleOfGame = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 
-export default () => playGame(ruleOfGame, getQuestionAndCorrectAnswer);
+export default () => playGame(gameDescription, getQuestionAndCorrectAnswer);
