@@ -1,4 +1,4 @@
-import { playGame } from '../index.js';
+import playGame from '../index.js';
 import generateNumber from '../utilities.js';
 
 const findGCD = (firstNum, secondNum) => {
