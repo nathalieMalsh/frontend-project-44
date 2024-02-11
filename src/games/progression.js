@@ -1,4 +1,5 @@
-import { getRandomNumber, playGame } from '../index.js';
+import { playGame } from '../index.js';
+import { generateNumber } from '../utilities.js';
 
 const getProgression = (firstNumber, step, progressionLength) => {
   const progression = [];
@@ -14,13 +15,13 @@ const getProgressionWithMiss = (progression, miss) => {
 };
 
 const getQuestionAndCorrectAnswer = () => {
-  const firstNumber = getRandomNumber(1, 100);
-  const step = getRandomNumber(1, 10);
+  const firstNumber = generateNumber();
+  const step = generateNumber(1, 10);
   const progressionLength = 10;
 
   const progression = getProgression(firstNumber, step, progressionLength);
 
-  const miss = getRandomNumber(0, 9);
+  const miss = generateNumber(0, 9);
   const correctAnswer = progression[miss];
   const progressionWithMiss = getProgressionWithMiss(progression, miss);
   const question = progressionWithMiss.join(' ');

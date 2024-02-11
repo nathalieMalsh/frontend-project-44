@@ -6,8 +6,6 @@ export const greeting = () => {
   return userName;
 };
 
-export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
 export const round = (question, gameDescription) => {
   const userAnswer = readlineSync.question(`${gameDescription} Question: ${question}\nYour answer:`);
   return userAnswer;

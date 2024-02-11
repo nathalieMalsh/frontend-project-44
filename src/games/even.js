@@ -1,9 +1,10 @@
-import { getRandomNumber, playGame } from '../index.js';
+import { playGame } from '../index.js';
+import { generateNumber } from '../utilities.js';
 
 const isEven = (number) => (number % 2 === 0);
 
 const getQuestionAndCorrectAnswer = () => {
-  const randomNumber = getRandomNumber(1, 100);
+  const randomNumber = generateNumber();
   const question = `${randomNumber}`;
   const correctAnswer = (isEven(randomNumber)) ? 'yes' : 'no';
 

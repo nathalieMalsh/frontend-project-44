@@ -1,4 +1,5 @@
-import { getRandomNumber, playGame } from '../index.js';
+import { playGame } from '../index.js';
+import { generateNumber } from '../utilities.js';
 
 const operators = ['+', '-', '*'];
 
@@ -16,13 +17,13 @@ const calculate = (firstNumber, secondNumber, randomOperator) => {
 };
 
 const getRandomOperator = (collOfOperators) => {
-  const randomOperator = getRandomNumber(0, collOfOperators.length - 1);
+  const randomOperator = generateNumber(0, collOfOperators.length - 1);
   return collOfOperators[randomOperator];
 };
 
 const getQuestionAndCorrectAnswer = () => {
-  const firstNumber = getRandomNumber(1, 100);
-  const secondNumber = getRandomNumber(1, 100);
+  const firstNumber = generateNumber();
+  const secondNumber = generateNumber();
   const randomOperator = getRandomOperator(operators);
 
   const correctAnswer = calculate(firstNumber, secondNumber, randomOperator);
