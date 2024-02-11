@@ -1,5 +1,5 @@
 import { playGame } from '../index.js';
-import { generateNumber } from '../utilities.js';
+import generateNumber from '../utilities.js';
 
 const findGCD = (firstNum, secondNum) => {
   const min = Math.min(firstNum, secondNum);
